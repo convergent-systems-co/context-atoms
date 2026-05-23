@@ -1,0 +1,55 @@
+# ATOMS.yml — catalog manifest for context-atoms
+#
+# Conforms to atoms-spec/v1.1.0 (Part VIII).
+# See https://github.com/convergent-systems-co/atoms-spec for the canonical schema.
+
+spec_version: atoms-spec/v1.1.0
+name: context-atoms
+version: 0.1.0
+canonical_domain: context-atoms.com
+federation: convergent-systems.co
+
+purpose: |
+  Context primitives for AI runtimes — situational frames, environment descriptors,
+  conversation scopes, working-memory shapes, attention budgets. Composes with
+  agent-atoms and prompt-atoms so an agent's situational context is expressed as
+  typed, versioned, signed atoms rather than free-text prose dumped into a system
+  prompt.
+
+atom_types:
+  - situational-frame
+  - environment-descriptor
+  - conversation-scope
+  - working-memory-shape
+  - attention-budget
+
+composition_type: contexts
+composition_dir: contexts/
+
+rule_types: []
+
+# v1.1.0: signing
+signing:
+  required_algorithms: ["ml-dsa-65"]
+  accepted_algorithms: ["ml-dsa-65", "ml-dsa-44"]
+  quorum_rules:
+    default: "1 of role:catalog-maintainer"
+    "governance/*": "1 of role:catalog-maintainer + 1 of role:ratifier"
+
+# v1.1.0: lifecycle
+lifecycle:
+  current: "bootstrap"  # bootstrap | published | adopted | historic
+
+# v1.1.0: dual-license model
+licensing:
+  code: "Apache-2.0"
+  data: "CC-BY-4.0"
+
+steward: convergent-systems-co
+infrastructure_operator: convergent-systems-co
+
+runtime_consumers: ["aish", "olympus"]
+
+maintainers:
+  - name: Convergent Systems
+    contact: maintainers@convergent-systems.co
