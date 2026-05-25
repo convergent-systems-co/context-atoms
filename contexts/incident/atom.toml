@@ -11,7 +11,7 @@ situational_frame_ref  = "context-atoms/situational-frame/incident"
 environment_ref        = "context-atoms/environment-descriptor/default"
 conversation_scope_ref = "context-atoms/conversation-scope/default"
 working_memory_ref     = "context-atoms/working-memory-shape/standard"
-attention_budget_ref   = "context-atoms/attention-budget/standard"
+attention_budget_ref   = "context-atoms/attention-budget/conservative"
 tags                   = ["incident", "response", "elevated"]
 
 [meta]
