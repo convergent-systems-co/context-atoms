@@ -1,0 +1,17 @@
+id           = "context-atoms/environment-descriptor/default"
+version      = "1.0.0"
+content_hash = ""
+lifecycle    = "draft"
+created_at   = "2026-05-25T00:00:00Z"
+
+[body]
+name            = "Default"
+description     = "Standard operator workstation — macOS/Linux, shell tools available, outbound internet"
+os_family       = "unix"
+tools_available = ["git", "gh", "curl", "jq", "python3"]
+network_policy  = "outbound-permitted"
+locale          = "en-US"
+
+[meta]
+provenance = "convergent-systems-co/context-atoms"
+license    = "Apache-2.0"

@@ -1,0 +1,16 @@
+id           = "context-atoms/attention-budget/conservative"
+version      = "1.0.0"
+content_hash = ""
+lifecycle    = "draft"
+created_at   = "2026-05-25T00:00:00Z"
+
+[body]
+name                = "Conservative"
+description         = "Conservative budget for production contexts — 32k tokens, drop conversation history first"
+max_tokens          = 32000
+truncation_priority = ["conversation-history", "working-memory", "system-prompt"]
+retention_bias      = "system-prompt"
+
+[meta]
+provenance = "convergent-systems-co/context-atoms"
+license    = "Apache-2.0"
