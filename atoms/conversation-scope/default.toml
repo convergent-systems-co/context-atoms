@@ -1,0 +1,17 @@
+id           = "context-atoms/conversation-scope/default"
+version      = "1.0.0"
+content_hash = ""
+lifecycle    = "draft"
+created_at   = "2026-05-25T00:00:00Z"
+
+[body]
+name                  = "Default"
+description           = "Unbounded topic scope — full multi-turn continuity, no digression limits"
+topic_bound           = false
+multi_turn_continuity = true
+max_prior_turn_refs   = 20
+digression_policy     = "permitted"
+
+[meta]
+provenance = "convergent-systems-co/context-atoms"
+license    = "Apache-2.0"

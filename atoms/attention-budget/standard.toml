@@ -1,0 +1,16 @@
+id           = "context-atoms/attention-budget/standard"
+version      = "1.0.0"
+content_hash = ""
+lifecycle    = "draft"
+created_at   = "2026-05-25T00:00:00Z"
+
+[body]
+name                = "Standard"
+description         = "Standard attention budget — 100k tokens, balanced priority ordering"
+max_tokens          = 100000
+truncation_priority = ["working-memory", "conversation-history", "system-prompt"]
+retention_bias      = "recent"
+
+[meta]
+provenance = "convergent-systems-co/context-atoms"
+license    = "Apache-2.0"
