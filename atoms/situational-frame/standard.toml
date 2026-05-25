@@ -1,0 +1,17 @@
+id           = "context-atoms/situational-frame/standard"
+version      = "1.0.0"
+content_hash = ""
+lifecycle    = "draft"
+created_at   = "2026-05-25T00:00:00Z"
+
+[body]
+name            = "Standard"
+description     = "General-purpose operating frame — interactive, moderate risk, routine tasks"
+task_domain     = "general"
+deployment_mode = "interactive"
+risk_posture    = "low"
+audit_level     = "standard"
+
+[meta]
+provenance = "convergent-systems-co/context-atoms"
+license    = "Apache-2.0"

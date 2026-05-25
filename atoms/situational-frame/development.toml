@@ -1,0 +1,17 @@
+id           = "context-atoms/situational-frame/development"
+version      = "1.0.0"
+content_hash = ""
+lifecycle    = "draft"
+created_at   = "2026-05-25T00:00:00Z"
+
+[body]
+name            = "Development"
+description     = "Local development environment — full tool access, verbose output, permissive defaults"
+task_domain     = "engineering"
+deployment_mode = "interactive"
+risk_posture    = "low"
+audit_level     = "minimal"
+
+[meta]
+provenance = "convergent-systems-co/context-atoms"
+license    = "Apache-2.0"
