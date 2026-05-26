@@ -43,6 +43,13 @@ jobs:
           node-version: "22"
           cache: "pnpm"
           cache-dependency-path: web/pnpm-lock.yaml
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: install python deps
+        run: pip install jsonschema
+      - name: build exports
+        run: python3 scripts/build-exports.py
       - name: install
         working-directory: web
         run: pnpm install --frozen-lockfile
