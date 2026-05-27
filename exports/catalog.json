@@ -1,0 +1,404 @@
+{
+  "catalog": "context-atoms",
+  "version": "0.1.0",
+  "built_at": "2026-05-27T17:55:29+00:00",
+  "atoms": [
+    {
+      "id": "context-atoms/attention-budget/conservative",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "body": {
+        "name": "Conservative",
+        "description": "Conservative budget for production contexts — 32k tokens, drop conversation history first",
+        "max_tokens": 32000,
+        "truncation_priority": [
+          "conversation-history",
+          "working-memory",
+          "system-prompt"
+        ],
+        "retention_bias": "system-prompt"
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/attention-budget/standard",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "body": {
+        "name": "Standard",
+        "description": "Standard attention budget — 100k tokens, balanced priority ordering",
+        "max_tokens": 100000,
+        "truncation_priority": [
+          "working-memory",
+          "conversation-history",
+          "system-prompt"
+        ],
+        "retention_bias": "recent"
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/conversation-scope/default",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "body": {
+        "name": "Default",
+        "description": "Unbounded topic scope — full multi-turn continuity, no digression limits",
+        "topic_bound": false,
+        "multi_turn_continuity": true,
+        "max_prior_turn_refs": 20,
+        "digression_policy": "permitted"
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/environment-descriptor/default",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "body": {
+        "name": "Default",
+        "description": "Standard operator workstation — macOS/Linux, shell tools available, outbound internet",
+        "os_family": "unix",
+        "tools_available": [
+          "git",
+          "gh",
+          "curl",
+          "jq",
+          "python3"
+        ],
+        "network_policy": "outbound-permitted",
+        "locale": "en-US"
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/situational-frame/development",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "body": {
+        "name": "Development",
+        "description": "Local development environment — full tool access, verbose output, permissive defaults",
+        "task_domain": "engineering",
+        "deployment_mode": "interactive",
+        "risk_posture": "low",
+        "audit_level": "minimal"
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/situational-frame/incident",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "body": {
+        "name": "Incident",
+        "description": "Active incident response — elevated permissions, all actions audited, urgency mode",
+        "task_domain": "incident-response",
+        "deployment_mode": "interactive",
+        "risk_posture": "high",
+        "audit_level": "full"
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/situational-frame/production",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "body": {
+        "name": "Production",
+        "description": "Live production environment — elevated audit, restricted write access, conservative defaults",
+        "task_domain": "operational",
+        "deployment_mode": "autonomous",
+        "risk_posture": "high",
+        "audit_level": "full"
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/situational-frame/standard",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "body": {
+        "name": "Standard",
+        "description": "General-purpose operating frame — interactive, moderate risk, routine tasks",
+        "task_domain": "general",
+        "deployment_mode": "interactive",
+        "risk_posture": "low",
+        "audit_level": "standard"
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/working-memory-shape/standard",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "body": {
+        "name": "Standard",
+        "description": "Standard working-memory shape — key/value scratchpad, 32 slots, session-scoped",
+        "slot_count": 32,
+        "value_types": [
+          "string",
+          "number",
+          "boolean",
+          "object"
+        ],
+        "eviction_policy": "lru",
+        "persistence": "session"
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    }
+  ],
+  "compositions": [
+    {
+      "id": "context-atoms/contexts/code-review",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-26T00:00:00Z",
+      "context": {
+        "name": "Code Review",
+        "description": "Automated code-review context — Anthropic API channel, security-architect identity",
+        "identity_ref": "security-architect",
+        "channel_refs": [
+          "anthropic-api"
+        ],
+        "active_policies": [
+          "audit-all-admin"
+        ],
+        "tags": [
+          "code-review",
+          "automated",
+          "audit"
+        ]
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/contexts/default",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "context": {
+        "name": "Default",
+        "description": "General-purpose context — standard frame, full scope, balanced budget",
+        "situational_frame_ref": "context-atoms/situational-frame/standard",
+        "environment_ref": "context-atoms/environment-descriptor/default",
+        "conversation_scope_ref": "context-atoms/conversation-scope/default",
+        "working_memory_ref": "context-atoms/working-memory-shape/standard",
+        "attention_budget_ref": "context-atoms/attention-budget/standard",
+        "tags": [
+          "default",
+          "general"
+        ]
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/contexts/dev",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "context": {
+        "name": "Development",
+        "description": "Development context — full tool access, permissive defaults, standard budget",
+        "situational_frame_ref": "context-atoms/situational-frame/development",
+        "environment_ref": "context-atoms/environment-descriptor/default",
+        "conversation_scope_ref": "context-atoms/conversation-scope/default",
+        "working_memory_ref": "context-atoms/working-memory-shape/standard",
+        "attention_budget_ref": "context-atoms/attention-budget/standard",
+        "tags": [
+          "development",
+          "local",
+          "permissive"
+        ]
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/contexts/dev-workspace",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-26T00:00:00Z",
+      "context": {
+        "name": "Dev Workspace",
+        "description": "Local developer workspace context — stdio and ollama-chat channels, permissive defaults",
+        "identity_ref": "developer",
+        "channel_refs": [
+          "stdio",
+          "ollama-chat"
+        ],
+        "tags": [
+          "development",
+          "local",
+          "permissive"
+        ]
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/contexts/incident",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "context": {
+        "name": "Incident Response",
+        "description": "Active incident context — elevated permissions, all actions audited, standard budget",
+        "situational_frame_ref": "context-atoms/situational-frame/incident",
+        "environment_ref": "context-atoms/environment-descriptor/default",
+        "conversation_scope_ref": "context-atoms/conversation-scope/default",
+        "working_memory_ref": "context-atoms/working-memory-shape/standard",
+        "attention_budget_ref": "context-atoms/attention-budget/conservative",
+        "tags": [
+          "incident",
+          "response",
+          "elevated"
+        ]
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/contexts/local-only",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-26T00:00:00Z",
+      "context": {
+        "name": "Local Only",
+        "description": "Offline / air-gapped local context — ollama-chat and stdio channels only, allow-local-models policy",
+        "identity_ref": "developer",
+        "channel_refs": [
+          "ollama-chat",
+          "stdio"
+        ],
+        "active_policies": [
+          "allow-local-models"
+        ],
+        "tags": [
+          "local",
+          "offline",
+          "air-gapped"
+        ]
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/contexts/prod-read-only",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-25T00:00:00Z",
+      "context": {
+        "name": "Production Read-Only",
+        "description": "Production read-only context — conservative budget, full audit, no write-tool access",
+        "situational_frame_ref": "context-atoms/situational-frame/production",
+        "environment_ref": "context-atoms/environment-descriptor/default",
+        "conversation_scope_ref": "context-atoms/conversation-scope/default",
+        "working_memory_ref": "context-atoms/working-memory-shape/standard",
+        "attention_budget_ref": "context-atoms/attention-budget/conservative",
+        "tags": [
+          "production",
+          "read-only",
+          "safe"
+        ]
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "context-atoms/contexts/production",
+      "version": "1.0.0",
+      "content_hash": "",
+      "lifecycle": "draft",
+      "created_at": "2026-05-26T00:00:00Z",
+      "context": {
+        "name": "Production",
+        "description": "Production service context — HTTP webhook channel, deny-unauthenticated-write policy",
+        "identity_ref": "service",
+        "channel_refs": [
+          "http-webhook"
+        ],
+        "active_policies": [
+          "deny-unauthenticated-write"
+        ],
+        "tags": [
+          "production",
+          "service",
+          "secure"
+        ]
+      },
+      "meta": {
+        "provenance": "convergent-systems-co/context-atoms",
+        "license": "Apache-2.0"
+      }
+    }
+  ],
+  "rules": []
+}
