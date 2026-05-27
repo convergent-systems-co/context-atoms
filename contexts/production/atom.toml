@@ -1,0 +1,17 @@
+id           = "context-atoms/contexts/production"
+version      = "1.0.0"
+content_hash = ""
+lifecycle    = "draft"
+created_at   = "2026-05-26T00:00:00Z"
+
+[context]
+name            = "Production"
+description     = "Production service context — HTTP webhook channel, deny-unauthenticated-write policy"
+identity_ref    = "service"
+channel_refs    = ["http-webhook"]
+active_policies = ["deny-unauthenticated-write"]
+tags            = ["production", "service", "secure"]
+
+[meta]
+provenance = "convergent-systems-co/context-atoms"
+license    = "Apache-2.0"

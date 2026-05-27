@@ -2,9 +2,9 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://context-atoms.com/schemas/composition-v1.json",
   "title": "context-atoms v1 composition",
-  "description": "A context composition assembling atoms (situational-frame, environment-descriptor, conversation-scope, working-memory-shape, attention-budget) into a complete context definition consumable by an agent runtime.",
+  "description": "A context composition assembling context atoms into a complete context definition consumable by an agent runtime. Supports two composition styles: (1) atom-bundle style using the 'references' object for situational-frame, environment-descriptor, conversation-scope, working-memory-shape, and attention-budget refs; (2) session-context style using identity_ref, channel_refs, and active_policies for olympus/aish runtime sessions.",
   "type": "object",
-  "required": ["schema", "type", "id", "version", "name", "references"],
+  "required": ["schema", "type", "id", "version", "name"],
   "additionalProperties": false,
   "properties": {
     "schema": {
@@ -27,6 +27,20 @@
         "working_memory_shape":  { "$ref": "#/$defs/ref" },
         "attention_budget":      { "$ref": "#/$defs/ref" }
       }
+    },
+    "identity_ref": {
+      "type": "string",
+      "description": "Reference to the identity atom for the principal that owns this session (session-context style). Format: identity-atoms/identity/<slug> or a short slug such as 'service', 'developer', 'security-architect'."
+    },
+    "channel_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "List of channel atom slugs or refs available in this session (session-context style). Each entry is a channel slug (e.g. 'http-webhook', 'stdio', 'ollama-chat') or a full atom ref."
+    },
+    "active_policies": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "List of policy atom slugs or refs enforced for this session (session-context style). Evaluated in list order; first matching rule wins."
     }
   },
   "$defs": {

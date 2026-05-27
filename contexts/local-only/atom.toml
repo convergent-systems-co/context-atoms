@@ -1,0 +1,17 @@
+id           = "context-atoms/contexts/local-only"
+version      = "1.0.0"
+content_hash = ""
+lifecycle    = "draft"
+created_at   = "2026-05-26T00:00:00Z"
+
+[context]
+name            = "Local Only"
+description     = "Offline / air-gapped local context — ollama-chat and stdio channels only, allow-local-models policy"
+identity_ref    = "developer"
+channel_refs    = ["ollama-chat", "stdio"]
+active_policies = ["allow-local-models"]
+tags            = ["local", "offline", "air-gapped"]
+
+[meta]
+provenance = "convergent-systems-co/context-atoms"
+license    = "Apache-2.0"
