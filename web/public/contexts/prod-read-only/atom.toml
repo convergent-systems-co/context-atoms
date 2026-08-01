@@ -1,0 +1,19 @@
+id           = "context-atoms/contexts/prod-read-only"
+version      = "1.0.0"
+content_hash = ""
+lifecycle    = "draft"
+created_at   = "2026-05-25T00:00:00Z"
+
+[context]
+name                   = "Production Read-Only"
+description            = "Production read-only context — conservative budget, full audit, no write-tool access"
+situational_frame_ref  = "context-atoms/situational-frame/production"
+environment_ref        = "context-atoms/environment-descriptor/default"
+conversation_scope_ref = "context-atoms/conversation-scope/default"
+working_memory_ref     = "context-atoms/working-memory-shape/standard"
+attention_budget_ref   = "context-atoms/attention-budget/conservative"
+tags                   = ["production", "read-only", "safe"]
+
+[meta]
+provenance = "convergent-systems-co/context-atoms"
+license    = "Apache-2.0"
